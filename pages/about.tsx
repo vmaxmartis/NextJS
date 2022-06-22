@@ -1,29 +1,19 @@
 import React from "react";
 import { useRouter } from 'next/router';
+import btn from '../styles/Btn.module.css'
 
-export interface Aboutpage {
+export default function AboutPage() {
 
-
-
-
-}
-export default function Aboutpage() {
-  
   const router = useRouter();
-  function gotoPost() {
-  // or using options object
-  router.push({
-  pathname: '/post/[postId]',
-  query: {
-  postId: 1,
-  ref: 'social',
-  },  
-  })
+  function backtoHome() {
+    router.push({
+      pathname: '/',
+    })
   }
   return (
     <>
-      <div>About Page </div>
-      <button onClick={gotoPost}>Go to Post List  </button>
+      <div>About Page</div>
+      <button className={btn.buttons} onClick={backtoHome}>Back to Home</button>
     </>
   );
 }
